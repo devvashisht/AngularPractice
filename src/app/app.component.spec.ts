@@ -1,5 +1,8 @@
+import { LoginPageComponent } from './login-page/login-page.component';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -7,6 +10,9 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [   RouterTestingModule.withRoutes([
+        { path: 'loginPage', component: LoginPageComponent },
+      ])]
     }).compileComponents();
   }));
 
@@ -22,10 +28,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('my-login');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('my-login app is running!');
-  });
 });
