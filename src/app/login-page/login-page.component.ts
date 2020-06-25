@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent implements OnInit {
+
   loginForm = new FormGroup({
     userName: new FormControl('', {
       updateOn: 'blur',
@@ -24,19 +25,35 @@ export class LoginPageComponent implements OnInit {
     }),
   });
 
-  constructor(private readonly router: Router) {}
+  constructor(private readonly router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
   onSubmit() {
-    console.log("Routed to 1login success");
     if (
       this.loginForm.controls.userName.value === 'Admin' &&
       this.loginForm.controls.password.value === 'password'
     ) {
       this.router.navigate(['/loginSuccess']);
-      console.log("Routed to login success");
     } else {
       alert('Incorrect User name or password,try again');
     }
   }
+  routetoNGZONE(event: Event) {
+    this.router.navigate(['/ngZoneExample']);
+  }
+  changeDetectionRef(event: Event) {
+    this.router.navigate(['/changeDetectref']);
+  }
+  creationObservable(event: Event) {
+    this.router.navigate(['/creationObservable']);
+  }
+  pipeOperator(event: Event) {
+    this.router.navigate(['/pipeOperator']);
+  }
+  SubjectComponent(event: Event) {
+    this.router.navigate(['/SubjectComponent']);
+  }
+
 }
