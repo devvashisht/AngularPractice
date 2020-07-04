@@ -37,3 +37,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - use this.\_ngZone.runOutsideAngular to avoid change detection or rendering for asych call and this.\_ngZone.run(() to run CD manually.
 - getter are always called on rendering.
 -
+
+## Dom Renering
+
+- Regurlar dom whereas React uses virtual dom
+- `Virtual Dom` keep a copy of virtual dom and on changes it will determine which part of DOM has changed and only changed part will be re-rendered
+- `Anuglar Rendering` works with ngZone library. Wrapper for browser api is written for all async api in Zone.js e.g. AddEventListener. Wrapper function has mechnism to run redering(runChangeDetechtion ) alnog with callback
+- Detail Info : https://blog.angular-university.io/how-does-angular-2-change-detection-really-work/
